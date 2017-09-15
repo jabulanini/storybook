@@ -16,7 +16,7 @@ class Label extends React.Component {
 
         const theming = StyleSheet.create({
             label: {
-                color: theme.colors.primary
+                color: theme.colors.primary,
             }
         })
 
@@ -25,8 +25,11 @@ class Label extends React.Component {
 
     render(){
         return(
-            <label className={this.getStyles()}>
+            <label
+                className={`${this.getStyles()}
+                ${this.props.className} `}>
                 {this.props.content + ':'}
+
             </label>
         )
     }

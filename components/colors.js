@@ -3,7 +3,7 @@ import { StyleSheet, css} from 'aphrodite'
 
 
 
-const colors = {
-    backgroundColor: "red"
-}
+// const colors = {
+//     backgroundColor: "red"
+// }
 export default colors

@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, css} from 'aphrodite'
-import colors from './colors'
+
 
 export default class TextInput extends React.Component {
     constructor(props) {
@@ -9,7 +9,7 @@ export default class TextInput extends React.Component {
 
     render(){
         return(
-            <input type="text" className={`${css(styles.textInput)} placeholderGreen formBorder`} placeholder={this.props.placeholder } />
+            <input type="text" className={`${css(styles.textInput)} ${this.props.className} placeholderBlack`} placeholder={this.props.placeholder } />
         )
     }
     
@@ -20,8 +20,6 @@ const styles = StyleSheet.create({
             verticalAlign:"middle",
             display:"table-cell",
             outline:"none",
-            padding:"10px 0 10px 10px",
-            backgroundColor:colors.backgroundColor,
-            border:"1px solid "+ colors.backgroundColor
+            border:"1px solid #f2f2f2"
         }
 })
