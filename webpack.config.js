@@ -32,7 +32,7 @@ var config = {
           },
           {
               test:   /\.css?/,
-              use: ["style-loader", "css-loader", "postcss-loader"],
+              use: ["style-loader", "css-loader", "postcss-loader","font-loader?format[]=truetype&format[]=woff&format[]=embedded-opentype"],
               options:{config:'postcss.config.js'}
           },
       ],

@@ -8,12 +8,17 @@ import { StyleSheet, css } from 'aphrodite';
 import { host } from 'storybook-host';
 import 'normalize.css';
 
+import'../assets/globals.css'
+
 // import { Button, Welcome } from '@storybook/react/demo';
 
 
 import { FormElement } from '../components/formElement'
 import { VerticalMenu } from '../components/verticalMenu'
 import Button from '../components/Button'
+import LabelInput from "../components/label-input";
+import { decorateTheme } from "../theme/theme-provider";
+import * as theme from "../theme/theme";
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -32,7 +37,7 @@ storiesOf('Typography', module)
     .add('Typography',
         withInfo('Typography examples')(() =>
             <div>
-                <h1 className={css(styles.title1)}>Title 1</h1>
+                <h1 className={`css(styles.title1) col-1`}>Title 1</h1>
                 <h1 className={css(styles.title2)}>Title 2</h1>
                 <h1 className={css(styles.title3)}>Title 3</h1>
                 <p className={css(styles.text1)}>Text 1</p>
@@ -76,6 +81,21 @@ storiesOf('Menus', module)
             />
         )
     )
+storiesOf('Inputs',module)
+    .addDecorator(host({
+        title:'label',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('label with input',
+        withInfo('dasda')(() => {
+            return (
+               <LabelInput />
+            )
+        }
+        ))
+
+
 
 storiesOf('Buttons', module)
     .addDecorator(host({
@@ -265,11 +285,11 @@ const styles = StyleSheet.create({
 
     },
 
-    title1: {
-        fontSize: 30,
-        lineHeight: '36px',
-        display : 'flex'
-    },
+    // title1: {
+    //     fontSize: 30,
+    //     lineHeight: '36px',
+    //     display : 'flex'
+    // },
     title2: {
         fontSize: 26,
         lineHeight: '30px'
