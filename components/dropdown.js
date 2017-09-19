@@ -1,7 +1,8 @@
 import React from 'react'
 import { StyleSheet, css} from 'aphrodite'
 
-import arrowDown from '../assets/images/icons/arrow-down.png'
+import ArrowDownIcon from './arrowDownIcon'
+
 
 
 class DropDown extends React.Component {
@@ -40,7 +41,8 @@ class DropDown extends React.Component {
                     {this.props.content + ':'}
                     {this.renderOptions()}
                 </select>
-                <img className={css(styles.arrowDown)} src={arrowDown} alt={"Arrow Down"}/>
+                <ArrowDownIcon className={css(styles.arrowDown)}/>
+                {/*<img className={css(styles.arrowDown)} src={arrowDown} alt={"Arrow Down"}/>*/}
             </div>
         )
     }
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
     dropdown:{
         width:"100%",
         height:"52px",
+        textIndent:"15px",
         border:"1px solid #f2f2f2",
         outline:"none",
         position:"relative",
@@ -68,7 +71,8 @@ const styles = StyleSheet.create({
     arrowDown:{
         position:"absolute",
         right:"15px",
-        top:"18px"
+        top:"16px",
+        fontSize:"25px"
 
     },
 

@@ -4,7 +4,7 @@ import Button from '../components/Button'
 
 const AvatarContent = () =>{
    return(
-       <div className="col-8">
+       <div className="col-6">
            <Button
                size='large'
            >Upload</Button>

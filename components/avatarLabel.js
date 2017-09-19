@@ -4,14 +4,16 @@ import { StyleSheet, css } from 'aphrodite'
 import Label from './label'
 import Avatar from './avatar'
 import AvatarContent from './avatarContent'
+import Question from "./sortIcon";
 
-export default class AvatarInput extends React.Component{
+
+export default class AvatarLabel extends React.Component{
     render(){
         return(
             <div className="formField col-8">
-                <Label className="col-2" label={this.props.label}/>
-                <Avatar className="col-2"/>
-                <AvatarContent className="col-8" />
+                <Label className="col-4" content={this.props.label}/>
+                <Avatar/>
+                <AvatarContent />
             </div>
         )
     }

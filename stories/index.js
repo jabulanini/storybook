@@ -29,7 +29,16 @@ import RadioButtonInput from "../components/radiobuttonInput";
 import TextAreaInput from "../components/textareaInput";
 import HorizontalLine from "../components/horizontal";
 import Avatar from "../components/avatar";
-import AvatarInput from "../components/avatarLabel";
+import AvatarLabel from "../components/avatarLabel";
+import AvatarInformation from "../components/AvatarInformation";
+import Table from "../components/table";
+import SortIcon from "../components/sortIcon";
+import ArrowLeftIcon from "../components/arrowLeftIcon";
+import ArrowDownIcon from "../components/arrowDownIcon";
+import PlusIcon from "../components/plusIcon";
+import CheckIcon from "../components/checkIcon";
+import SearchIcon from "../components/searchIcon";
+
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -48,7 +57,7 @@ storiesOf('Typography', module)
     .add('Typography',
         withInfo('Typography examples')(() =>
             <div>
-                <h1 className={`css(styles.title1) col-1`}>Title 1</h1>
+                <h1 className={css(styles.title1)}>Title 1</h1>
                 <h1 className={css(styles.title2)}>Title 2</h1>
                 <h1 className={css(styles.title3)}>Title 3</h1>
                 <p className={css(styles.text1)}>Text 1</p>
@@ -154,7 +163,7 @@ storiesOf('TextArea',module)
                         label="Stjepan"
                         rows="4"
                         placeholder="Sometext goes here"
-                        wideFull
+                        wide
                     />
                 )
             }
@@ -183,15 +192,107 @@ storiesOf('Avatar',module)
     .add('Avatar',
         withInfo('dasda')(() => {
                 return (
-                    <AvatarInput
+                    <AvatarLabel
                     label="Photo image"
                     />
                 )
             }
         ))
+    .add('Avatar Information',
+        withInfo('dasda')(() => {
+                return (
+                    <AvatarInformation/>
+                )
+            }
+        ))
 
+const arr = [
+    ["peer", "stjepan", "biilosta",<Button size="small" >edit</Button>],
+    ["peer", "stjepan", "biilosta"],
+    ["peer", "stjepan", "biilosta"],
+    ["peer", "stjepan", "biilosta"]
+]
 
+storiesOf('Table',module)
+    .addDecorator(host({
+        title:'Table',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Table',
+        withInfo('dasda')(() => {
+                return (
+                    <Table
+                        headers={[["dasdas", <SortIcon/>], "stjepan", "biilosta",""]}
+                        data={arr}
+                    />
+                )
+            }
+        ))
+    .add('Table with search',
+        withInfo('dasda')(() => {
+                return (
+                    <Table
+                        headers={[["dasdas", <SearchIcon/>], "Klaun", "biilosta","dasdasd", "dada"]}
+                        data={arr}
+                    />
+                )
+            }
+        ))
 
+storiesOf('Icons',module)
+    .addDecorator(host({
+        title:'Icons',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Arrow Left',
+        withInfo('Icon')(() => {
+                return (
+                    <ArrowLeftIcon/>
+                )
+            }
+        ))
+    .addDecorator(decorateTheme(theme))
+    .add('Sort Icon',
+        withInfo('Icon')(() => {
+                return (
+                    <SortIcon/>
+                )
+            }
+        ))
+    .addDecorator(decorateTheme(theme))
+    .add('Search Icon',
+        withInfo('Icon')(() => {
+                return (
+                    <SearchIcon/>
+                )
+            }
+        ))
+    .addDecorator(decorateTheme(theme))
+    .add('Plus Icon',
+        withInfo('Icon')(() => {
+                return (
+                    <PlusIcon/>
+                )
+            }
+        ))
+    .addDecorator(decorateTheme(theme))
+    .add('Arrow Down Icon',
+        withInfo('Icon')(() => {
+                return (
+                    <ArrowDownIcon/>
+                )
+            }
+        ))
+    .addDecorator(decorateTheme(theme))
+    .add('Check Icon',
+        withInfo('Icon')(() => {
+                return (
+                    <CheckIcon/>
+                )
+            }
+        ))
 
 
 storiesOf('Checkbox',module)

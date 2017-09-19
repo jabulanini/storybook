@@ -13,7 +13,7 @@ export default class CheckBoxInput extends React.Component{
         if(!checkboxes) return null
         return checkboxes.map(checkbox => {
             return (
-                <CheckBox  className={css(styles.checkbox)} label={checkbox}/>
+                <CheckBox wide={this.props.wide} className={css(styles.checkbox)} label={checkbox}/>
             )
         })
 
