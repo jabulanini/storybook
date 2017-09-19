@@ -60,6 +60,11 @@ export default class Button extends React.Component {
                 return styles.default
         }
     }
+    pickBg(){
+        if(this.props.noBg){
+            return (styles.transparent)
+        }else return null
+    }
 
     pickStyle() {
         const _temp =  [
@@ -69,6 +74,7 @@ export default class Button extends React.Component {
             this.pickRounded(),
             this.pickPrefix(),
             this.pickSuffix(),
+            this.pickBg()
         ]
         console.log(_temp)
         return _temp
@@ -165,6 +171,9 @@ const styles = StyleSheet.create({
     },
     primary:{
       backgroundColor:'green'
+    },
+    transparent:{
+        backgroundColor:"transparent"
     },
     xsmallSpan:{
         minWidth:45-20

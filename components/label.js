@@ -9,6 +9,7 @@ class Label extends React.Component {
         super(props)
     }
 
+
     getStyles () {
         const { theme } = this.props
 
@@ -33,12 +34,11 @@ class Label extends React.Component {
             </label>
         )
     }
-
-
 }
 
 const styles = StyleSheet.create({
     label:{
+        textAlign:"right",
         color:"#898989",
         verticalAlign:"middle",
         display:"table-cell",

@@ -26,6 +26,7 @@
 .formField{
 	display: table;
 }
+
 .placeholderBlack::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	color:   var(--main-placeholder-color);
 	font-size: 19px;

@@ -9,7 +9,11 @@ export default class TextInput extends React.Component {
 
     render(){
         return(
-            <input type="text" className={`${css(styles.textInput)} ${this.props.className} placeholderBlack`} placeholder={this.props.placeholder } />
+            <input
+                type="text"
+                className={`${css(styles.textInput)}
+                 ${this.props.className} placeholderBlack`}
+                placeholder={this.props.placeholder } />
         )
     }
     

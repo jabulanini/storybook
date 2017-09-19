@@ -10,6 +10,7 @@ import 'normalize.css';
 
 import'../assets/globals.css'
 
+
 // import { Button, Welcome } from '@storybook/react/demo';
 
 
@@ -17,8 +18,18 @@ import { FormElement } from '../components/formElement'
 import { VerticalMenu } from '../components/verticalMenu'
 import Button from '../components/Button'
 import LabelInput from "../components/label-input";
+import DropDown from "../components/dropdown";
 import { decorateTheme } from "../theme/theme-provider";
 import * as theme from "../theme/theme";
+import DropDownInput from "../components/dropdownInput";
+import CheckBox from "../components/checkbox";
+
+import CheckBoxInput from '../components/checkboxInput'
+import RadioButtonInput from "../components/radiobuttonInput";
+import TextAreaInput from "../components/textareaInput";
+import HorizontalLine from "../components/horizontal";
+import Avatar from "../components/avatar";
+import AvatarInput from "../components/avatarLabel";
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
@@ -95,6 +106,110 @@ storiesOf('Inputs',module)
         }
         ))
 
+storiesOf('Dropdowns',module)
+    .addDecorator(host({
+        title:'Dropdowns',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('DropDown with input',
+        withInfo('dasda')(() => {
+                return (
+                    <DropDownInput
+                        label="labela je prosljedenja"
+                        options={["pero", "sjtpej", "dadas"]}
+                    />
+                )
+            }
+        ))
+
+storiesOf('Radio',module)
+    .addDecorator(host({
+        title:'Radio',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Radio with input',
+        withInfo('dasda')(() => {
+                return (
+                    <RadioButtonInput
+                        label="je prosljedenja"
+                        radioButtons={["pero", "sjtpej", "dadas"]}
+                        name="erere"
+                    />
+                )
+            }
+        ))
+
+storiesOf('TextArea',module)
+    .addDecorator(host({
+        title:'TextArea',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Area with input',
+        withInfo('dasda')(() => {
+                return (
+                    <TextAreaInput
+                        label="Stjepan"
+                        rows="4"
+                        placeholder="Sometext goes here"
+                        wideFull
+                    />
+                )
+            }
+        ))
+
+storiesOf('Horizontal',module)
+    .addDecorator(host({
+        title:'Horizontal',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Horizontal line',
+        withInfo('dasda')(() => {
+                return (
+                    <HorizontalLine/>
+                )
+            }
+        ))
+
+storiesOf('Avatar',module)
+    .addDecorator(host({
+        title:'Avatar',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Avatar',
+        withInfo('dasda')(() => {
+                return (
+                    <AvatarInput
+                    label="Photo image"
+                    />
+                )
+            }
+        ))
+
+
+
+
+
+storiesOf('Checkbox',module)
+    .addDecorator(host({
+        title:'Checkbox',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Checkbox with input',
+        withInfo('dasda')(() => {
+                return (
+                    <CheckBoxInput
+                        wide
+                        label="Avaliable translation"
+                        checkboxes={["German", "English", "Croatian","Bosniainn"]}/>
+                )
+            }
+        ))
 
 
 storiesOf('Buttons', module)
@@ -250,29 +365,29 @@ storiesOf('Form elements', module)
         ))
 
 
-storiesOf('Blobs', module)
-    .addDecorator(host({
-        title: 'Blobs',
-        align: 'left top',
-        height: '100%',
-        width: 300,
-        cropMarks: false
-    }))
-    .add('User blob',
-        withInfo('User blob component')(() =>
-            <div className={css([styles.group, styles.flex])}>
-                <img className={css(styles.image)} src="http://365psd.com/images/istock/previews/9353/93539553-flat-vector-avatar-face-character-person-portrait-user-icon.jpg" />
-                <div>
-                    <h3 className={css(styles.title3)}>Title style 3</h3>
-                    <p className={css(styles.text2)} style={{display: 'inline'}} >Text style 2</p>
-                    <a href="#" className={css([styles.link, styles.marginRight20])}>091234567</a>
-                    <a href="#" className={css([styles.link, styles.marginRight20])}>email@provider.com</a>
-                    <a href="#" className={css([styles.link, styles.marginRight20])}>email@provider.com</a>
-                </div>
-            </div>
-        )
-    )
-
+// storiesOf('Blobs', module)
+//     .addDecorator(host({
+//         title: 'Blobs',
+//         align: 'left top',
+//         height: '100%',
+//         width: 300,
+//         cropMarks: false
+//     }))
+//     .add('User blob',
+//         withInfo('User blob component')(() =>
+//             <div className={css([styles.group, styles.flex])}>
+//                 <img className={css(styles.image)} src="http://365psd.com/images/istock/previews/9353/93539553-flat-vector-avatar-face-character-person-portrait-user-icon.jpg" />
+//                 <div>
+//                     <h3 className={css(styles.title3)}>Title style 3</h3>
+//                     <p className={css(styles.text2)} style={{display: 'inline'}} >Text style 2</p>
+//                     <a href="#" className={css([styles.link, styles.marginRight20])}>091234567</a>
+//                     <a href="#" className={css([styles.link, styles.marginRight20])}>email@provider.com</a>
+//                     <a href="#" className={css([styles.link, styles.marginRight20])}>email@provider.com</a>
+//                 </div>
+//             </div>
+//         )
+//     )
+//
 
 
 
