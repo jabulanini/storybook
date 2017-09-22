@@ -3,7 +3,7 @@ import { StyleSheet, css } from 'aphrodite'
 
 const Avatar = () => {
     return (
-        <div className="col-2">
+        <div className="col-1">
             <img className={css(styles.image)} src="http://365psd.com/images/istock/previews/9353/93539553-flat-vector-avatar-face-character-person-portrait-user-icon.jpg" alt=""/>
         </div>
             )

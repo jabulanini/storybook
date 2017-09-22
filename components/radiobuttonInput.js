@@ -3,6 +3,7 @@ import { StyleSheet, css } from 'aphrodite'
 
 import Label from './label'
 import RadioButton from "./radiobutton";
+import Row from './row'
 
 
 
@@ -20,13 +21,13 @@ export default class RadioButtonInput extends React.Component{
 
     render(){
         return(
-            <div className="formField col-8">
+            <Row>
                 <Label className="col-4" content={this.props.label}/>
-                <div className="col-8 clearfix">
+                <div>
                     {this.renderRadioButtons()}
                 </div>
 
-            </div>
+            </Row>
         )
     }
 }

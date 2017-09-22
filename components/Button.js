@@ -138,14 +138,16 @@ export default class Button extends React.Component {
 
     render() {
         return (
-            <button
-                className={css(this.pickStyle())}
-                onClick={this.props.onClick}
-            >
-                {this.renderPrefix()}
-                <span className={css(this.pickContentStyle())}>{this.props.children}</span>
-                {this.renderSuffix()}
-            </button>
+            <div className={this.props.className}>
+                <button
+                    className={css(this.pickStyle())}
+                    onClick={this.props.onClick}
+                >
+                    {this.renderPrefix()}
+                    <span className={css(this.pickContentStyle())}>{this.props.children}</span>
+                    {this.renderSuffix()}
+                </button>
+            </div>
         )
     }
 }

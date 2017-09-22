@@ -3,15 +3,16 @@ import { StyleSheet, css } from 'aphrodite'
 
 import Label from './label'
 import DropDown from "./dropdown";
+import Row from "./row";
 
 
 export default class DropDownInput extends React.Component{
     render (){
         return(
-            <div className="formField col-8">
+            <Row>
                 <Label className="col-4" content={this.props.label}/>
-                <DropDown wideSmall options={this.props.options}/>
-            </div>
+                <DropDown  options={this.props.options}/>
+            </Row>
         )
     }
 }

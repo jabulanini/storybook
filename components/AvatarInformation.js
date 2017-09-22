@@ -3,15 +3,16 @@ import { StyleSheet, css } from 'aphrodite'
 
 
 import Avatar from './avatar'
+import Row from './row'
 import AvatarInformationContent from './AvatarInformationContent'
 
 export default class AvatarInformation extends React.Component{
     render(){
         return(
-            <div className="formField col-8">
-                <Avatar className="col-2"/>
+            <Row>
+                <Avatar/>
                 <AvatarInformationContent/>
-            </div>
+            </Row>
         )
     }
 }

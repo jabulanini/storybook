@@ -4,15 +4,16 @@ import Button from '../components/Button'
 
 const AvatarContent = () =>{
    return(
-       <div className="col-6">
-           <Button
+       <div>
+           <Button className="col-1"
                size='large'
            >Upload</Button>
            <Button
+               className="col-1"
                noBg
                size='large'
            >Remove</Button>
-           <p>Reccomended size 300x300px</p>
+           <p className="col-7">Reccomended size 300x300px</p>
        </div>
    )
 

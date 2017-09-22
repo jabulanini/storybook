@@ -5,6 +5,7 @@ import { StyleSheet, css } from 'aphrodite'
 import TableHeader from './tableHeader'
 import TableRow from './tableRow'
 
+
 const renderRows = data =>{
     return data.map((row, index)=> <TableRow index={index} data={row}/>)
 };
@@ -13,7 +14,7 @@ const renderRows = data =>{
 const Table = props => {
     return (
         <table className={`${css(styles.table)} col-12`}>
-            <TableHeader data={props.headers}/>
+            <TableHeader color={props.color} bgColor={props.bgColor} className={props.className} data={props.headers}/>
             {renderRows(props.data)}
         </table>
     )

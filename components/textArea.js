@@ -27,7 +27,8 @@ const TextArea = props =>{
 const styles = StyleSheet.create({
     textArea:{
         resize:"none",
-        outline:"none"
+        outline:"none",
+        border:"1px solid black"
     }
 });
 

@@ -3,6 +3,7 @@ import { StyleSheet, css } from 'aphrodite'
 
 import Label from './label'
 import CheckBox from "./checkbox";
+import Row from './row'
 
 
 
@@ -21,13 +22,13 @@ export default class CheckBoxInput extends React.Component{
 
     render(){
         return(
-            <div className="formField col-8">
+            <Row>
                 <Label className="col-4" content={this.props.label}/>
                 <div className="col-8 clearfix">
                     {this.renderCheckboxes()}
                 </div>
 
-            </div>
+            </Row>
         )
     }
 }

@@ -23,6 +23,7 @@ import { decorateTheme } from "../theme/theme-provider";
 import * as theme from "../theme/theme";
 import DropDownInput from "../components/dropdownInput";
 import CheckBox from "../components/checkbox";
+import Row from "../components/row";
 
 import CheckBoxInput from '../components/checkboxInput'
 import RadioButtonInput from "../components/radiobuttonInput";
@@ -32,6 +33,18 @@ import Avatar from "../components/avatar";
 import AvatarLabel from "../components/avatarLabel";
 import AvatarInformation from "../components/AvatarInformation";
 import Table from "../components/table";
+import PageTitle from "../components/pageTitle";
+import PageTitlePlus from "../components/pageTitlePlus";
+import PageTitleSearch from "../components/pageTitlePlusSearch";
+import TitleActions from "../components/titleActions";
+import TabsList from "../components/tabs";
+import GrayBox from "../components/grayBox";
+import GreenBox from "../components/greenBox";
+import AnalyticsCount from "../components/analyticsCount";
+
+
+
+
 import SortIcon from "../components/sortIcon";
 import ArrowLeftIcon from "../components/arrowLeftIcon";
 import ArrowDownIcon from "../components/arrowDownIcon";
@@ -51,7 +64,7 @@ storiesOf('Typography', module)
         title: 'Typography',
         align: 'left top',
         height: '100%',
-        width: 300,
+        width: '1080px',
         cropMarks: false
     }))
     .add('Typography',
@@ -64,6 +77,44 @@ storiesOf('Typography', module)
                 <p className={css(styles.text2)}>Text 2</p>
                 <p className={css(styles.text3)}>Text 2</p>
             </div>
+        ))
+    .add('Page Title',
+        withInfo('Typography examples')(() =>
+            <PageTitle
+                className="col-7"
+                title ="Title"
+            />
+        ))
+    .add('Page Title with Plus btn',
+        withInfo('Typography examples')(() =>
+            <PageTitlePlus
+                borderBottom="green"/>
+        ))
+    .add('Page Title with search',
+        withInfo('Typography examples')(() =>
+            <PageTitleSearch
+                borderBottom="green"/>
+        ))
+    .add('Page title with actions',
+        withInfo('Typography examples')(() =>
+           <TitleActions
+                className="col-3"
+                label="Some text goes here"
+                actions={
+                    [
+                        <DropDownInput
+                            label="Stjepan"
+                            options={["pero", "sjtpej", "dadas"]}
+                            className="col-3"
+                        />,
+                        <DropDownInput
+                            label="Stjepan"
+                            options={["pero", "sjtpej", "dadas"]}
+                            className="col-3"
+                        />,
+                    ]
+                }
+           />
         ))
 
 storiesOf('Menus', module)
@@ -101,6 +152,138 @@ storiesOf('Menus', module)
             />
         )
     )
+storiesOf('Boxes',module)
+    .addDecorator(host({
+        title:'Boxes',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Gray Box',
+        withInfo('One gray Box')(() => {
+                return [{
+                    title:1250,
+                    subtitle:"Online Registration"
+                    },
+                    {
+                        title:1250,
+                        subtitle:"Online Registration"
+                    },{
+                        title:1250,
+                        subtitle:"Online Registration"
+                    },
+                    {
+                        title:1250,
+                        subtitle:"Online Registration"
+                    }].map((entry,index) =>
+
+                        <GrayBox
+                         key={index}
+                         {...entry}
+                         threecol
+                     />
+                )
+            }
+        ))
+
+    .addDecorator(decorateTheme(theme))
+    .add('Green Box ',
+        withInfo('One gray Box')(() => {
+                return [
+                    {   information:"Online reg",
+                        title:1250,
+                        subtitle:"Online Registration"
+                    },
+                    {   information:"Online reg",
+                        title:1250,
+                        subtitle:"Online Registration"
+                    },
+                    {
+                        information:"Online reg",
+                        title:1250,
+                        subtitle:"Online Registration"
+                    },
+                    {
+                        information:"Online reg",
+                        title:1250,
+                        subtitle:"Online Registration"
+                    }
+                ].map((entry,index) =>
+                    <GreenBox
+                    key={index}
+                    {...entry}
+                    threecol/>
+
+                )
+            }
+        ))
+
+storiesOf('Analytics Count',module)
+    .addDecorator(host({
+        title:'Analytics count',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Analytics',
+        withInfo('Analytics component')(() => {
+                return[
+                    {
+                    title:"Total Racers",
+                    subtitle:6584+"/"+6000
+                    },
+                    {
+                        title:"Total Racers",
+                        subtitle:6584+"/"+6000
+                    },
+                    {
+                        title:"Total Racers",
+                        subtitle:6584+"/"+6000
+                    },
+                    {
+                        title:"Total Racers",
+                        subtitle:6584+"/"+6000
+                    },
+                ].map ((entry, index) =>
+                    <AnalyticsCount
+                    key={index}
+                    {...entry}
+                        wide
+                    />
+                )
+            }
+        ))
+
+
+storiesOf('Row',module)
+    .addDecorator(host({
+        title:'Tabs',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Tabs with input',
+        withInfo('Row component')(() => {
+                return (
+
+                    <Row>
+                        This is component for next row
+                    </Row>
+                )
+            }
+        ))
+storiesOf('Tabs',module)
+    .addDecorator(host({
+        title:'Tabs',
+        width:"1080px"
+    }))
+    .addDecorator(decorateTheme(theme))
+    .add('Tabs with input',
+        withInfo('dasda')(() => {
+                return (
+                    <TabsList
+                        data={["All", "Group", "Individual"]}
+                    />
+                )
+            }
+        ))
 storiesOf('Inputs',module)
     .addDecorator(host({
         title:'label',
@@ -124,10 +307,10 @@ storiesOf('Dropdowns',module)
     .add('DropDown with input',
         withInfo('dasda')(() => {
                 return (
-                    <DropDownInput
-                        label="labela je prosljedenja"
-                        options={["pero", "sjtpej", "dadas"]}
-                    />
+                        <DropDownInput
+                            label="labela je prosljedenja"
+                            options={["pero", "sjtpej", "dadas"]}
+                        />
                 )
             }
         ))
@@ -142,9 +325,9 @@ storiesOf('Radio',module)
         withInfo('dasda')(() => {
                 return (
                     <RadioButtonInput
-                        label="je prosljedenja"
-                        radioButtons={["pero", "sjtpej", "dadas"]}
-                        name="erere"
+                        label="Visibility"
+                        radioButtons={["Public visibility", "Private visibility"]}
+                        name="visibility"
                     />
                 )
             }
@@ -194,6 +377,7 @@ storiesOf('Avatar',module)
                 return (
                     <AvatarLabel
                     label="Photo image"
+
                     />
                 )
             }
@@ -225,6 +409,9 @@ storiesOf('Table',module)
                     <Table
                         headers={[["dasdas", <SortIcon/>], "stjepan", "biilosta",""]}
                         data={arr}
+                        color="gray"
+
+
                     />
                 )
             }
@@ -354,7 +541,7 @@ storiesOf('Buttons', module)
     .add('BtnPrefix',
         withInfo('BtnPrefix')(() =>
             <Button
-                prefix={<b>$</b>}
+                prefix={<PlusIcon/>}
                 size='xlarge'
                 color='primary'
                 rounded
