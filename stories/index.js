@@ -52,6 +52,7 @@ import ArrowDownIcon from "../components/arrowDownIcon";
 import PlusIcon from "../components/plusIcon";
 import CheckIcon from "../components/checkIcon";
 import SearchIcon from "../components/searchIcon";
+import Pagination from "../components/pagination";
 
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
@@ -409,10 +410,16 @@ const arr = [
     ["peer", "stjepan", "biilosta"]
 ]
 
+let selected = 0
+
+function select(id) {
+  selected = id
+}
+
 storiesOf('Table',module)
     .addDecorator(host({
         title:'Table',
-        width:"1080px"
+        width:"500px"
     }))
     .addDecorator(decorateTheme(theme))
     .add('Table',
@@ -438,6 +445,15 @@ storiesOf('Table',module)
                 )
             }
         ))
+    .add('Pagination',
+      withInfo('Pagination')(() =>
+        <Pagination
+          pageCount={54}
+          onPageChange={id => console.log('Page is changed to,', id)}
+          selectedPage={50}
+        />
+      )
+    )
 
 storiesOf('Icons',module)
     .addDecorator(host({
