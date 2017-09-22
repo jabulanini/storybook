@@ -23,13 +23,15 @@
 .clearfix { display: block; }
 /* close commented backslash hack */
 
-.formField{
-	display: table;
-}
+
 ul,h1,p{
 	padding: 0;
 	margin: 0;
 }
+input:focus:required:invalid{ color: red; border-color: red; box-shadow: 0 0 6px red;}
+input:focus:required:valid,
+input:focus:required:placeholder-shown{ border-color: green; box-shadow: 0 0 8px green;}
+
 
 .placeholderBlack::-webkit-input-placeholder { /* WebKit, Blink, Edge */
 	color:   var(--main-placeholder-color);

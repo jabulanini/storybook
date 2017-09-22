@@ -9,6 +9,12 @@ class Label extends React.Component {
         super(props)
     }
 
+    topStyleLabel (){
+        if(this.props.topLabel){
+            return css(styles.topLabel)
+        }
+    }
+
 
     getStyles () {
         const { theme } = this.props
@@ -27,7 +33,7 @@ class Label extends React.Component {
     render(){
         return(
             <label
-                className={`${this.getStyles()}
+                className={`${this.getStyles()} ${this.topStyleLabel()}
                 ${this.props.className} `}>
                 {this.props.content + ':'}
 
@@ -46,6 +52,9 @@ const styles = StyleSheet.create({
         [queries.s]: {
             fontSize: '50px'
         }
+    },
+    topLabel:{
+        fontSize:"14px"
     }
 })
 

@@ -18,6 +18,7 @@ import { FormElement } from '../components/formElement'
 import { VerticalMenu } from '../components/verticalMenu'
 import Button from '../components/Button'
 import LabelInput from "../components/label-input";
+import LabelTopInput from "../components/labelTopInput";
 import DropDown from "../components/dropdown";
 import { decorateTheme } from "../theme/theme-provider";
 import * as theme from "../theme/theme";
@@ -179,7 +180,6 @@ storiesOf('Boxes',module)
                         <GrayBox
                          key={index}
                          {...entry}
-                         threecol
                      />
                 )
             }
@@ -187,7 +187,7 @@ storiesOf('Boxes',module)
 
     .addDecorator(decorateTheme(theme))
     .add('Green Box ',
-        withInfo('One gray Box')(() => {
+        withInfo('One Green Box')(() => {
                 return [
                     {   information:"Online reg",
                         title:1250,
@@ -211,7 +211,8 @@ storiesOf('Boxes',module)
                     <GreenBox
                     key={index}
                     {...entry}
-                    threecol/>
+                    threecol
+                    green/>
 
                 )
             }
@@ -296,6 +297,17 @@ storiesOf('Inputs',module)
                <LabelInput />
             )
         }
+        ))
+    .addDecorator(decorateTheme(theme))
+    .add('upper label  input',
+        withInfo('upper label')(() => {
+                return (
+                    <LabelTopInput
+                        content="Some text"
+                        className="col-7"
+                    />
+                )
+            }
         ))
 
 storiesOf('Dropdowns',module)
