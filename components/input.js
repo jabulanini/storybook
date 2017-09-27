@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
     },
     prefix:{
         color:"#9b9b9b",
-
         position:"absolute",
         left:"0px"
 

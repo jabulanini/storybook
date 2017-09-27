@@ -69,13 +69,7 @@ const styles = StyleSheet.create({
         position:"relative",
         padding:"0px"
     },
-    arrowDown:{
-        position:"absolute",
-        right:"15px",
-        top:"16px",
-        fontSize:"25px"
 
-    },
 
 })
 
